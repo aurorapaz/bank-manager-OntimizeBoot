@@ -1,18 +1,5 @@
-/*C2*/SET SCHEMA PUBLIC
-DELETE FROM OFFER WHERE ID=1
-INSERT INTO OFFER VALUES(1,'Exotic language programmer','Will provide administrative and logistical support to members of the executive team and may support other as needed. Must display professionalism and a strong work ethic while fostering a work environment that is positive, optimistic and collaborative. Position requires excellent administrative, communication, organizational and time management skills paired with flexibility, integrity and the ability to work independently.','Rosaline Maddocks',0,'2019-12-01','2019-12-15',NULL)
-COMMIT
-INSERT INTO OFFER_STATUS VALUES(4,'STARTED')
-COMMIT
-DELETE FROM OFFER_STATUS WHERE ID=1
-INSERT INTO OFFER_STATUS VALUES(1,'Started')
-COMMIT
-INSERT INTO OFFER_CANDIDATE_STATUS VALUES(4,'PENDING CV')
-COMMIT
-DELETE FROM OFFER_CANDIDATE_STATUS WHERE ID=1
-INSERT INTO OFFER_CANDIDATE_STATUS VALUES(1,'Pending CV')
-COMMIT
-DELETE FROM OFFER_CANDIDATE_STATUS WHERE ID=1
-COMMIT
-INSERT INTO OFFER_CANDIDATE_STATUS VALUES(5,'PENDING CV')
-COMMIT
+/*C5*/SET SCHEMA PUBLIC
+DISCONNECT
+/*C8*/SET SCHEMA PUBLIC
+SET SCHEMA PUBLIC
+SET SCHEMA PUBLIC
