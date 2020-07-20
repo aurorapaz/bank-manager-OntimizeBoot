@@ -113,4 +113,10 @@ public class OfferService implements IOfferService{
  public EntityResult offerCandidateStatusDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
   return this.daoHelper.delete(this.offerCandidateStatusDao, keyMap);
  }
+ 
+ @Override
+ public EntityResult offerCandidateDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+   throws OntimizeJEERuntimeException {
+  return this.daoHelper.query(this.offerCandidatesDao, keyMap, attrList, OfferCandidatesDao.QUERY_OFFER_DETAILS);
+ }
 }
