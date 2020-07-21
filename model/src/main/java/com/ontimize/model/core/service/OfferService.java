@@ -34,7 +34,7 @@ public class OfferService implements IOfferService {
 			throws OntimizeJEERuntimeException {
 		return this.daoHelper.query(this.offerDao, keyMap, attrList);
 	}
-
+	
 	@Override
 	@Secured({ PermissionsProviderSecured.SECURED })
 	public EntityResult offerInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {

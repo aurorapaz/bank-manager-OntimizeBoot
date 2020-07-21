@@ -18,6 +18,8 @@
    <AmbiguousColumns>
     <AmbiguousColumn name="DESC_STATUS" prefix="OS"
      databaseName="DESCRIPTION" />
+    <AmbiguousColumn name="OFF_STATUS" prefix="OCS"
+     databaseName="DESCRIPTION" />
    </AmbiguousColumns>
    <Sentence>
    <![CDATA[
@@ -31,6 +33,8 @@
      OC.CANDIDATE_ID = C.ID
     INNER JOIN PUBLIC.OFFER_STATUS OS ON
      O.OFFER_STATUS = OS.ID
+    INNER JOIN PUBLIC.OFFER_CANDIDATE_STATUS OCS ON
+     O.OFFER_STATUS = OCS.ID
     #WHERE#
    ]]>
    </Sentence>

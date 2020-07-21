@@ -1,0 +1,18 @@
+<o-column>
+  <o-row>
+    <div fxFlex>
+      <o-list #list attr="offerList" service="offers" entity="offer" keys="ID"
+        columns="ACRONYM;DESCRIPTION;APPLICANT;OFFER_STATUS;CREATION_DATE;START_DATE;END_DATE">
+        <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+          <mat-card-header>
+            <mat-card-title>{{ rowData.ACRONYM }}</mat-card-title>
+            <mat-card-subtitle>{{ rowData.APPLICANT }} {{ rowData.OFFER_STATUS }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content><p>{{'START_DATE' | oTranslate }}: {{ rowData.START_DATE | date  }}</p><p> {{'END_DATE' | oTranslate }}:
+            {{ rowData.END_DATE | date  }}</p></mat-card-content>
+        </mat-card>
+      </o-list>
+    </div>
+  </o-row>
+  
+</o-column>

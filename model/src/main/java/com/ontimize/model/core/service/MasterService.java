@@ -26,6 +26,8 @@ public class MasterService implements IMasterService{
  @Autowired private OriginDao originDao;
  @Autowired private ProfileDao profileDao;
  @Autowired private StatusDao statusDao;
+ 
+ 
  @Autowired private DefaultOntimizeDaoHelper daoHelper;
  
  @Override

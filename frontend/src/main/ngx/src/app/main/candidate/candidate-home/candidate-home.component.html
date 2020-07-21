@@ -1,0 +1,27 @@
+<o-form-layout-manager title="{{'CANDIDATE' | oTranslate }}" separator=" " mode="tab" label-columns="DNI" >
+  <div fxFlex>
+    <o-list #list attr="candidateList" service="candidates" entity="candidate"
+  keys="ID" columns="PHOTO;NAME;SURNAME;BIRTHDAY;DNI;PHONE;EMAIL;EDUCATION;SPECIALTIES;
+  STATUS;ORIGIN;WAGE_LEVEL;EXPERIENCE_LEVEL;PROFILE;COMMENT;LINKEDIN" delete-button="no" quick-filter-columns="DNI;NAME">
+  <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+    <mat-card-header>
+      <!--
+      <div mat-card-avatar>
+        <img matListAvatar attr="PHOTO" title="PHOTO" orderable="no" searchable="no" type="image" avatar="no" 
+      empty-image="assets/images/no-image.png" image-type="base64">
+      </div>
+      -->
+      <mat-card-title>{{ rowData.DNI }}</mat-card-title>
+      <mat-card-subtitle>{{ rowData.NAME }} {{ rowData.SURNAME }}</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+       <p>{{ rowData.PHONE }}</p> 
+       <p>{{ rowData.EMAIL }}</p> 
+       <p>{{ rowData.STATUS }}</p>
+       <p>{{ rowData.PROFILE }}</p>
+
+    </mat-card-content>
+  </mat-card>
+</o-list>
+    </div>
+   </o-form-layout-manager>

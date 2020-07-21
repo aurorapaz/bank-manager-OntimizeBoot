@@ -1,0 +1,49 @@
+<o-form service="candidates" entity="candidate" keys="ID" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-row>
+    <o-column>
+      <o-image id="PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+    </o-column>
+    <o-column title-label="CANDIDATE_PERSONAL_INFORMATION" fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="NAME" fxFlex="40" required="yes"></o-text-input>
+        <o-text-input class="input-padding" attr="SURNAME" fxFlex="40" required="yes"></o-text-input>
+        <o-date-input attr="BIRTHDAY" fxFlex="20"></o-date-input>
+      </o-row>
+      <o-row>
+        <o-nif-input attr="DNI" class="input-padding" fxFlex="40" required="yes"></o-nif-input>
+        <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input>
+        <o-list-picker attr="EDUCATION" class="input-padding" fxFlex="20" service="candidates" 
+           entity="candidate" keys="ID" columns="PHOTO;NAME;SURNAME;BIRTHDAY;DNI;PHONE;EMAIL;EDUCATION;SPECIALTIES;
+           STATUS;ORIGIN;WAGE_LEVEL;EXPERIENCE_LEVEL;PROFILE;COMMENT;LINKEDIN" 
+           visible-columns="EDUCATION" value-column="EDUCATION"></o-list-picker>
+      </o-row>
+      <o-row>
+        <o-email-input attr="EMAIL" fxFlex></o-email-input>
+      </o-row>
+      <o-row>
+        <o-text-input attr="SPECIALTIES" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+      </o-row>
+      <o-row>
+        <o-text-input attr="STATUS" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+      </o-row>
+      <o-row>
+        <o-text-input attr="ORIGIN" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+      </o-row>
+      <o-row>
+        <o-text-input attr="WAGE_LEVEL" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+      </o-row>
+      <o-row>
+        <o-text-input attr="EXPERIENCE_LEVEL" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+      </o-row>
+      <o-row>
+        <o-text-input attr="PROFILE" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+      </o-row>
+      <o-row>
+        <o-text-input attr="LINKEDIN" fxFlex></o-text-input>
+      </o-row>
+      <o-row>
+          <o-textarea-input attr="COMMENT" fxFlex></o-textarea-input>
+        </o-row>
+    </o-column>
+  </o-row>
+</o-form>

@@ -1,0 +1,91 @@
+<p>
+  master-home works!
+</p>
+<o-column>
+<o-row>
+<div fxFlex>
+  <p >{{ 'EDUCATION' | oTranslate}}
+  </p>
+    <o-list #list attr="educationList" service="masters" entity="education"
+  keys="ID" columns="DESCRIPTION">
+  <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+    <mat-card-header>
+      <mat-card-title>{{ rowData.DESCRIPTION }}</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content></mat-card-content>
+  </mat-card>
+</o-list>
+    </div>
+  </o-row>
+    <o-row>
+ <div fxFlex>
+  <p >{{ 'EXPERIENCE_LEVEL' | oTranslate}}
+  </p>
+    <o-list #list attr="experienceLevelList" service="masters" entity="experienceLevel"
+  keys="ID" columns="DESCRIPTION">
+  <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+    <mat-card-header>
+      <mat-card-title>{{ rowData.DESCRIPTION }}</mat-card-title>
+      <mat-card-subtitle></mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content></mat-card-content>
+  </mat-card>
+</o-list>
+    </div>
+  </o-row>  
+    <o-row>
+ <div fxFlex>
+  <p >{{ 'ORIGIN' | oTranslate}}
+  </p>
+  <o-list #list attr="originList" service="masters" entity="origin"
+keys="ID" columns="DESCRIPTION">
+<mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+  <mat-card-header>
+    <mat-card-title>{{ rowData.DESCRIPTION }}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content></mat-card-content>
+</mat-card>
+</o-list>
+  </div>
+</o-row>  
+</o-column>
+
+<o-column>
+  <o-row>
+    
+
+ <div fxFlex>
+  <p >{{ 'PROFILE' | oTranslate}}
+  </p>
+  <o-list #list attr="profileList" service="masters" entity="profile"
+keys="ID" columns="DESCRIPTION">
+<mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+  <mat-card-header>
+    <mat-card-title>{{ rowData.DESCRIPTION }}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content></mat-card-content>
+</mat-card>
+</o-list>
+  </div>
+</o-row>
+  <o-row>
+ <div fxFlex>
+  <p >{{ 'STATUS' | oTranslate}}
+  </p>
+  <o-list #list attr="statusList" service="masters" entity="status"
+keys="ID" columns="DESCRIPTION">
+<mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+  <mat-card-header>
+    <mat-card-title>{{ rowData.DESCRIPTION }}</mat-card-title>
+    <mat-card-subtitle></mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content></mat-card-content>
+</mat-card>
+</o-list>
+  </div>
+</o-row>
+</o-column>
+

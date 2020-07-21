@@ -1,0 +1,23 @@
+<p>
+  user-home works!
+</p>
+
+<o-column>
+  <o-row>
+    <div fxFlex>
+      <p>{{ 'USER' | oTranslate}}
+      </p>
+      <o-list #list attr="userList" service="users" entity="user" keys="ID"
+        columns="">
+        <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+          <mat-card-header>
+            <mat-card-title>{{ rowData.ACRONYM }}</mat-card-title>
+            <mat-card-subtitle>{{ rowData.APPLICANT }}+" "+{{ rowData.OFFER_STATUS }}</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>{{ rowData.CREATION_DATE }}+" "+{{ rowData.START_DATE }}+" "+
+            {{ rowData.END_DATE }}+" "+{{ rowData.DESCRIPTION }}</mat-card-content>
+        </mat-card>
+      </o-list>
+    </div>
+  </o-row>
+</o-column>
