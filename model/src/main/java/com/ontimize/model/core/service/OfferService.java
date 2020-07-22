@@ -36,6 +36,12 @@ public class OfferService implements IOfferService {
 	}
 	
 	@Override
+	public EntityResult offerDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.query(this.offerDao, keyMap, attrList, OfferDao.QUERY_DETAILS);
+	}
+	
+	@Override
 	@Secured({ PermissionsProviderSecured.SECURED })
 	public EntityResult offerInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
 		return this.daoHelper.insert(this.offerDao, attrMap);
