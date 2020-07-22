@@ -1,21 +1,15 @@
-<p>
-  user-home works!
-</p>
-
 <o-column>
   <o-row>
     <div fxFlex>
-      <p>{{ 'USER' | oTranslate}}
-      </p>
-      <o-list #list attr="userList" service="users" entity="user" keys="ID"
-        columns="">
+      <o-list #list attr="userList" service="users" entity="user" keys="USER_"
+        columns="USER_;PASSWORD;NAME;SURNAME;EMAIL;NIF;USERBLOCKED;LASTPASSWORDUPDATE;FIRSTLOGIN" 
+        delete-button="no" quick-filter-columns="USER_;NAME">
         <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
           <mat-card-header>
-            <mat-card-title>{{ rowData.ACRONYM }}</mat-card-title>
-            <mat-card-subtitle>{{ rowData.APPLICANT }}+" "+{{ rowData.OFFER_STATUS }}</mat-card-subtitle>
+            <mat-card-title>{{'USERNAME' | oTranslate}}: {{ rowData.USER_ }}</mat-card-title>
+            <mat-card-subtitle>{{'NAME' | oTranslate}}:  {{ rowData.NAME }}</mat-card-subtitle>
           </mat-card-header>
-          <mat-card-content>{{ rowData.CREATION_DATE }}+" "+{{ rowData.START_DATE }}+" "+
-            {{ rowData.END_DATE }}+" "+{{ rowData.DESCRIPTION }}</mat-card-content>
+          <mat-card-content>{{'PASSWORD' | oTranslate}}: {{ rowData.PASSWORD }}</mat-card-content>
         </mat-card>
       </o-list>
     </div>

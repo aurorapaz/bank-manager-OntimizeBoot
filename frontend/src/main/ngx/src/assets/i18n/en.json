@@ -41,6 +41,11 @@
   "APPLICANT": "Applicant" ,
   "CREATION_DATE": "Creation date" ,
   "OFFER_STATUS": "Offer status" ,
-  "DESCRIPTION": "Description"
+  "DESCRIPTION": "Description",
+  "USER_": "User" ,
+  "USER_INFORMATION": "User information" ,
+  "USERBLOCKED": "User blocked" ,
+  "LASTPASSWORDUPDATE": "Last password update" ,
+  "FIRSTLOGIN": "First login"
 
 }

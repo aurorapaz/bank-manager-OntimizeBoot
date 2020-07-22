@@ -41,6 +41,11 @@
   "APPLICANT": "Aplicante",
   "CREATION_DATE": "Fecha de creacion",
   "OFFER_STATUS": "Estado de la oferta",
-  "DESCRIPTION": "Descripcion" 
+  "DESCRIPTION": "Descripcion" ,
+  "USER_": "Usuario" ,
+  "USER_INFORMATION": "Informacion de usuario" ,
+  "USERBLOCKED": "Usuario bloqueado" ,
+  "LASTPASSWORDUPDATE": "Ultima actualizacion de contraseña" ,
+  "FIRSTLOGIN": "Primer acceso"
 
 }

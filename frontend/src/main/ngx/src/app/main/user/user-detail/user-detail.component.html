@@ -1,0 +1,28 @@
+<o-form service="users" entity="user" keys="USER_" header-actions="R;I;U;D" show-header-navigation="no">
+  <o-text-input attr="USER_" enabled="no"></o-text-input> <!-- SE PUEDE CAMBIAR ???? -->
+  <o-row>
+    <o-column title-label="USER_INFORMATION" fxFlex>
+      <o-row>
+        <o-text-input class="input-padding" attr="NAME" fxFlex="40"></o-text-input>
+        <o-text-input class="input-padding" attr="SURNAME" fxFlex="40"></o-text-input>
+        <o-text-input class="input-padding" attr="PASSWORD" fxFlex="40"></o-text-input>
+      </o-row>
+      <o-row >
+        <o-email-input attr="EMAIL" fxFlex></o-email-input>
+        <o-nif-input attr="NIF" class="input-padding" fxFlex="40"></o-nif-input>
+
+      </o-row>
+      <o-row>
+        <o-column fxFlex="30">
+        <o-date-input attr="USERBLOCKED" fxFlex></o-date-input>
+      </o-column>
+        <o-column fxFlex="40">
+        <o-date-input attr="LASTPASSWORDUPDATE" fxFlex></o-date-input>
+      </o-column>
+        <o-column fxFlex="30">
+        <o-date-input attr="FIRSTLOGIN" fxFlex></o-date-input>
+      </o-column>
+      </o-row>
+    </o-column>
+  </o-row>
+</o-form>
