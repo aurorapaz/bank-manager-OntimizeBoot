@@ -10,6 +10,7 @@ public interface IOfferService {
 
    // OFFER
  public EntityResult offerQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
+ public EntityResult offerDetailsQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException;
  public EntityResult offerInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException;
  public EntityResult offerUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap) throws OntimizeJEERuntimeException;
  public EntityResult offerDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException;

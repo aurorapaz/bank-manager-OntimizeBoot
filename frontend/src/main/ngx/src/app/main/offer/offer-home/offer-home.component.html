@@ -1,7 +1,7 @@
 <o-column>
   <o-row>
     <div fxFlex>
-      <o-list #list attr="offerList" service="offers" entity="offer" keys="ID"
+      <o-list #list attr="offerList" service="offers" entity="offerDetails" keys="ID"
         columns="ACRONYM;DESCRIPTION;APPLICANT;OFFER_STATUS;CREATION_DATE;START_DATE;END_DATE"
         delete-button="no" quick-filter-columns="ACRONYM">
         <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
