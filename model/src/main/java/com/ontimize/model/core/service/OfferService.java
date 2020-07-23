@@ -36,7 +36,7 @@ public class OfferService implements IOfferService {
 	}
 	
 	@Override
-	public EntityResult offerDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+	public EntityResult  offerDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
 			throws OntimizeJEERuntimeException {
 		return this.daoHelper.query(this.offerDao, keyMap, attrList, OfferDao.QUERY_DETAILS);
 	}

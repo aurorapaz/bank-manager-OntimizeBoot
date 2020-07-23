@@ -3,7 +3,7 @@
  xmlns="http://www.ontimize.com/schema/jdbc"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
  xsi:schemaLocation="http://www.ontimize.com/schema/jdbc http://www.ontimize.com/schema/jdbc/ontimize-jdbc-dao.xsd"
- catalog="" schema="${mainschema}" table="CANDIDATE"
+ catalog="" schema="${mainschema}" table="CV"
  datasource="mainDataSource" sqlhandler="dbSQLStatementHandler">
  <DeleteKeys>
   <Column>ID</Column>
@@ -12,24 +12,4 @@
   <Column>ID</Column>
  </UpdateKeys>
  <GeneratedKey>ID</GeneratedKey>
- 
-	<Queries>
-		<Query id="details">
-			<AmbiguousColumns>
-				<AmbiguousColumn name="CANDIDATE_PROFILE"
-					databaseName="DESCRIPTION" prefix="OS" />
-			</AmbiguousColumns>
-			<Sentence>
-				 <![CDATA[
-					SELECT
-						#COLUMNS#
-					FROM
-						PUBLIC.CANDIDATE O
-					INNER JOIN PUBLIC.PROFILE OS
-						ON O.PROFILE = OS.ID
-					#WHERE# 
-				 ]]>
-			 </Sentence>
-		</Query>
-	</Queries>
 </JdbcEntitySetup>

@@ -28,6 +28,8 @@ public class CandidateDao extends OntimizeJdbcDaoSupport {
  public static final String ATTR_PROFILE = "PROFILE";
  public static final String ATTR_COMMENT = "COMMENT";
  public static final String ATTR_LINKEDIN = "LINKEDIN";
+ public static final String ATTR_CV = "CV";
+ public static final String QUERY_DETAILS = "details";
  
 
 }

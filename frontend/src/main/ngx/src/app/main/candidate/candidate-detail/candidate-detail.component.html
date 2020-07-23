@@ -1,8 +1,20 @@
-<o-form service="candidates" entity="candidate" keys="ID" header-actions="R;I;U;D" show-header-navigation="no">
-  <o-text-input attr="ID" sql-type="INTEGER" enabled="no"></o-text-input>
+
+<mat-tab-group fxFlex> 
+  <mat-tab label="{{ 'PERSONAL_INFORMATION' | oTranslate }}">
+    <o-form service="candidates" entity="candidate" keys="ID" header-actions="R;I;U;D" show-header-navigation="no">
+  
+
+  <o-text-input #ID attr="ID" sql-type="INTEGER" enabled="no"></o-text-input>
   <o-row>
     <o-column>
-      <o-image id="PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image>
+      <o-row>
+        <o-image id="PHOTO" attr="PHOTO" empty-image="assets/images/no-image.png" sql-type="OTHER"></o-image></o-row>
+      <o-row>    
+        
+      </o-row>
+      <o-file-input attr="CV" label="{{ 'CURRICULUM' | oTranslate }}" read-only="no" required="yes" accept-file-type=".pdf"
+      max-file-size="40000000" multiple="no" layout-padding ></o-file-input>
+        
     </o-column>
     <o-column title-label="CANDIDATE_PERSONAL_INFORMATION" fxFlex>
       <o-row>
@@ -12,32 +24,32 @@
       </o-row>
       <o-row>
         <o-nif-input attr="DNI" class="input-padding" fxFlex="40" required="yes"></o-nif-input>
-        <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input>
-        <o-list-picker attr="EDUCATION" class="input-padding" fxFlex="20" service="candidates" 
-           entity="candidate" keys="ID" columns="PHOTO;NAME;SURNAME;BIRTHDAY;DNI;PHONE;EMAIL;EDUCATION;SPECIALTIES;
-           STATUS;ORIGIN;WAGE_LEVEL;EXPERIENCE_LEVEL;PROFILE;COMMENT;LINKEDIN" 
-           visible-columns="EDUCATION" value-column="EDUCATION"></o-list-picker>
+        <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input> 
+          <o-combo attr="EDUCATION" service="candidates" entity="education" columns="ID;DESCRIPTION"
+          value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%">
+          </o-combo>
       </o-row>
       <o-row>
         <o-email-input attr="EMAIL" fxFlex></o-email-input>
       </o-row>
       <o-row>
-        <o-text-input attr="SPECIALTIES" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-text-input attr="SPECIALTIES" fxFlex></o-text-input> 
       </o-row>
       <o-row>
-        <o-text-input attr="STATUS" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-combo attr="STATUS" service="candidates" entity="status" columns="ID;DESCRIPTION"
+          value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%">
+          </o-combo>
+          <o-combo attr="PROFILE" service="candidates" entity="profile" columns="ID;DESCRIPTION"
+            value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%"> </o-combo>
       </o-row>
       <o-row>
-        <o-text-input attr="ORIGIN" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-combo attr="ORIGIN" service="candidates" entity="origin" columns="ID;DESCRIPTION"
+          value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%"> </o-combo>
+          <o-combo attr="EXPERIENCE_LEVEL" service="candidates" entity="experienceLevel" columns="ID;DESCRIPTION"
+            value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%"> </o-combo>
       </o-row>
       <o-row>
-        <o-text-input attr="WAGE_LEVEL" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
-      </o-row>
-      <o-row>
-        <o-text-input attr="EXPERIENCE_LEVEL" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
-      </o-row>
-      <o-row>
-        <o-text-input attr="PROFILE" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-text-input attr="WAGE_LEVEL" fxFlex></o-text-input>
       </o-row>
       <o-row>
         <o-text-input attr="LINKEDIN" fxFlex></o-text-input>
@@ -45,6 +57,49 @@
       <o-row>
           <o-textarea-input attr="COMMENT" fxFlex></o-textarea-input>
         </o-row>
+
+
+
+        
+  <o-text-input #ID_CV attr="ID_CV" sql-type="INTEGER" enabled="no"></o-text-input>
     </o-column>
   </o-row>
+
 </o-form>
+</mat-tab>
+<!-- 
+<o-form service="CVs" entity="CV" keys="ID" parent-keys="ID_CANDIDATE"  header-actions="R;I;U;D">
+  <o-text-input attr="ID" sql-type="INTEGER" enabled="no"></o-text-input>
+  <o-text-input attr="ID_CANDIDATE" sql-type="INTEGER" enabled="no"></o-text-input>
+
+  <o-text-input attr="STUDIES" fxFlex></o-text-input>
+  <o-text-input attr="VOLUNTEERING" fxFlex></o-text-input>
+  <o-text-input attr="WORK" fxFlex></o-text-input>
+  <o-text-input attr="ENGLISH_LEVEL" fxFlex></o-text-input>
+  <o-text-input attr="SKILLS" fxFlex></o-text-input>
+  <o-text-input attr="PROGRAMATION_LANGUAGES" fxFlex></o-text-input>
+  
+
+</o-form>
+
+<mat-tab label="Curriculum">
+  
+  <o-combo attr="CV" service="CVs" entity="CV" columns="ID"
+  value-column="ID" keys="ID" visible-columns="ID" width="33%"> </o-combo>
+<o-list #list attr="CVList" service="CVs" entity="CV"
+  keys="ID" columns="ID;ID_CANDIDATE;STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES" delete-button="no" quick-filter-columns="DNI;NAME">
+  <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+  <div *ngIf="rowData==ID_CV">Content to render when condition is true.</div>
+</mat-card>
+  </o-list>
+  
+
+  <o-row><o-table fxFlex attr="CVTable" service="CVs" entity="CV" keys="ID" query-rows="1" 
+       columns="ID;ID_CANDIDATE;STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES" 
+       visible-columns="STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES"  >
+  </o-table></o-row>
+</mat-tab>-->
+</mat-tab-group>
+
+
+  

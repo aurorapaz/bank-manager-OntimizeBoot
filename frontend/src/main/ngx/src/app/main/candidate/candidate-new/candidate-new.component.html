@@ -11,32 +11,32 @@
       </o-row>
       <o-row>
         <o-nif-input attr="DNI" class="input-padding" fxFlex="40" required="yes"></o-nif-input>
-        <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input>
-        <o-list-picker attr="EDUCATION" class="input-padding" fxFlex="20" service="candidates" 
-           entity="candidate" keys="ID" columns="PHOTO;NAME;SURNAME;BIRTHDAY;DNI;PHONE;EMAIL;EDUCATION;SPECIALTIES;
-           STATUS;ORIGIN;WAGE_LEVEL;EXPERIENCE_LEVEL;PROFILE;COMMENT;LINKEDIN" 
-           visible-columns="EDUCATION" value-column="EDUCATION"></o-list-picker>
+        <o-integer-input attr="PHONE" class="input-padding" step="0" grouping="no" fxFlex="40"></o-integer-input> 
+          <o-combo attr="EDUCATION" service="candidates" entity="education" columns="ID;DESCRIPTION"
+          value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%">
+          </o-combo>
       </o-row>
       <o-row>
         <o-email-input attr="EMAIL" fxFlex></o-email-input>
       </o-row>
       <o-row>
-        <o-text-input attr="SPECIALTIES" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-text-input attr="SPECIALTIES" fxFlex></o-text-input> 
       </o-row>
       <o-row>
-        <o-text-input attr="STATUS" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-combo attr="STATUS" service="candidates" entity="status" columns="ID;DESCRIPTION"
+          value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%">
+          </o-combo>
+          <o-combo attr="PROFILE" service="candidates" entity="profile" columns="ID;DESCRIPTION"
+            value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%"> </o-combo>
       </o-row>
       <o-row>
-        <o-text-input attr="ORIGIN" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-combo attr="ORIGIN" service="candidates" entity="origin" columns="ID;DESCRIPTION"
+          value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%"> </o-combo>
+          <o-combo attr="EXPERIENCE_LEVEL" service="candidates" entity="experienceLevel" columns="ID;DESCRIPTION"
+            value-column="ID" keys="ID" visible-columns="DESCRIPTION" width="33%"> </o-combo>
       </o-row>
       <o-row>
-        <o-text-input attr="WAGE_LEVEL" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
-      </o-row>
-      <o-row>
-        <o-text-input attr="EXPERIENCE_LEVEL" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
-      </o-row>
-      <o-row>
-        <o-text-input attr="PROFILE" fxFlex></o-text-input> <!-- IGUAL QUE EDUCATION -->
+        <o-text-input attr="WAGE_LEVEL" fxFlex></o-text-input>
       </o-row>
       <o-row>
         <o-text-input attr="LINKEDIN" fxFlex></o-text-input>

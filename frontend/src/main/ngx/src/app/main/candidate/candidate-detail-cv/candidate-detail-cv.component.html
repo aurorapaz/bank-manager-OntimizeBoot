@@ -1,0 +1,44 @@
+<o-form service="cvs" entity="cv" keys="ID" header-actions="no" show-header-navigation="no" header-actions="R;I;U;D">
+    
+      <o-integer-input attr="ID"  sql-type="INTEGER" enabled="no"></o-integer-input>
+      <!--<mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
+        <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
+          keys-sql-types="VARBINARY" columns="ID_DMS_DOC">
+          <o-filemanager-table service="customers" workspace-key="CV" new-folder-button="yes"></o-filemanager-table>
+          
+          </o-form>
+      </mat-tab>
+
+  
+        <o-combo attr="CV" service="CVs" entity="CV" columns="ID"
+        value-column="ID" keys="ID" visible-columns="ID" width="33%"> </o-combo>
+
+
+
+        --> 
+       <!-- <o-list #list attr="CVList" service="CVs" entity="CV"
+        keys="ID" columns="ID;ID_CANDIDATE;STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES" delete-button="no" quick-filter-columns="DNI;NAME">
+        <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
+        <div *ngIf="rowData==ID_CV">Content to render when condition is true.</div>
+      </mat-card>
+        </o-list>
+        
+        <o-form service="CVs" entity="CV" keys="ID" parent-keys="ID_CANDIDATE"  header-actions="R;I;U;D">
+          <o-text-input attr="ID" sql-type="INTEGER" enabled="no"></o-text-input>
+          <o-text-input attr="ID_CANDIDATE" sql-type="INTEGER" enabled="no"></o-text-input>
+      
+          <o-text-input attr="STUDIES" fxFlex></o-text-input>
+          <o-text-input attr="VOLUNTEERING" fxFlex></o-text-input>
+          <o-text-input attr="WORK" fxFlex></o-text-input>
+          <o-text-input attr="ENGLISH_LEVEL" fxFlex></o-text-input>
+          <o-text-input attr="SKILLS" fxFlex></o-text-input>
+          <o-text-input attr="PROGRAMATION_LANGUAGES" fxFlex></o-text-input>
+          
+        
+        </o-form>
+      
+        <o-row><o-table fxFlex attr="CVTable" service="CVs" entity="CV" keys="ID" query-rows="1" 
+             columns="ID;ID_CANDIDATE;STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES" 
+             visible-columns="STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES"  >
+        </o-table></o-row>-->
+  </o-form>

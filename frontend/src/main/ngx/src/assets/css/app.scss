@@ -5,6 +5,8 @@
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-pink-bluegrey.scss';
 // @import 'node_modules/ontimize-web-ngx-theming/src/themes/mat-purple-green.scss';
 @import 'node_modules/ontimize-web-ngx-theming/src/themes/ontimize.scss';
+@import 'node_modules/ontimize-web-ngx-theming/ontimize-theme-lite.scss';
+@include ontimize-theme-styles-lite($theme);
 
 // Include ontimize theme
 @import 'node_modules/ontimize-web-ngx-theming/ontimize-theme.scss';
@@ -21,3 +23,6 @@
 // Propagate theme to screen styles definition.
 @import '../../app/login/login.theme.scss';
 @include login-theme($theme);
+
+@include ontimize-theme-styles-lite($theme);
+@include o-material-theme($theme, $lite-typography);

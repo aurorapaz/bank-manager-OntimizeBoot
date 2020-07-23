@@ -1,8 +1,8 @@
 <o-form-layout-manager title="{{'CANDIDATE' | oTranslate }}" separator=" " mode="tab" label-columns="DNI" >
   <div fxFlex>
     <o-list #list attr="candidateList" service="candidates" entity="candidate"
-  keys="ID" columns="PHOTO;NAME;SURNAME;BIRTHDAY;DNI;PHONE;EMAIL;EDUCATION;SPECIALTIES;
-  STATUS;ORIGIN;WAGE_LEVEL;EXPERIENCE_LEVEL;PROFILE;COMMENT;LINKEDIN" delete-button="no" quick-filter-columns="DNI;NAME">
+  keys="ID" columns="ID;PHOTO;NAME;SURNAME;BIRTHDAY;DNI;PHONE;EMAIL;EDUCATION;SPECIALTIES;
+  STATUS;ORIGIN;WAGE_LEVEL;EXPERIENCE_LEVEL;PROFILE;COMMENT;LINKEDIN;CV;ID_CV" delete-button="no" quick-filter-columns="DNI;NAME">
   <mat-card *ngFor="let rowData of list.dataArray" [o-list-item]="rowData">
     <mat-card-header>
       <!--
@@ -16,11 +16,11 @@
     </mat-card-header>
     <mat-card-content>
        <p>{{ rowData.PHONE }}</p> 
-       <p>{{ rowData.EMAIL }}</p> 
-       <p>{{ rowData.STATUS }}</p>
-       <p>{{ rowData.PROFILE }}</p>
+       <p>{{ rowData.EMAIL }}</p>
 
     </mat-card-content>
+    <o-row><o-button attr="CV" type="ICON" icon="insert_drive_file" routerLinkActive="active" routerLink="{{ rowData.ID }}/cvs" >Curriculum</o-button>
+    </o-row>
   </mat-card>
 </o-list>
     </div>

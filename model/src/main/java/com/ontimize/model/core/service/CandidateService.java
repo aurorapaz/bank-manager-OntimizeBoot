@@ -16,9 +16,11 @@ import com.ontimize.api.core.service.ICandidateService;
 import com.ontimize.model.core.dao.CandidateDao;
 import com.ontimize.model.core.dao.EducationDao;
 import com.ontimize.model.core.dao.ExperienceLevelDao;
+import com.ontimize.model.core.dao.OfferDao;
 import com.ontimize.model.core.dao.OriginDao;
 import com.ontimize.model.core.dao.ProfileDao;
 import com.ontimize.model.core.dao.StatusDao;
+import com.ontimize.model.core.dao.CVDao;
 import com.ontimize.jee.common.exceptions.OntimizeJEERuntimeException;
 import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 
@@ -27,7 +29,14 @@ import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 public class CandidateService implements ICandidateService{
 
  @Autowired private CandidateDao candidateDao;
+ @Autowired private EducationDao educationDao;
+ @Autowired private OriginDao originDao;
+ @Autowired private ExperienceLevelDao experienceLevelDao;
+ @Autowired private ProfileDao profileDao;
+ @Autowired private StatusDao statusDao;
  @Autowired private DefaultOntimizeDaoHelper daoHelper;
+ @Autowired private CVDao CVDao;
+ 
  @Autowired
  private MasterService masterService;
  @Override
@@ -35,6 +44,14 @@ public class CandidateService implements ICandidateService{
    throws OntimizeJEERuntimeException {
   return this.daoHelper.query(this.candidateDao, keyMap, attrList);
  }
+
+	
+	@Override
+	public EntityResult candidateDetailsQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		return this.daoHelper.query(this.candidateDao, keyMap, attrList, OfferDao.QUERY_DETAILS);
+	}
+	
 
  @Override
  @Transactional(rollbackFor = Exception.class)
@@ -150,4 +167,160 @@ public class CandidateService implements ICandidateService{
 	   }
 	  }
 	 }
+
+	@Override
+	public EntityResult educationQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.query(this.educationDao, keyMap, attrList);
+	}
+
+	@Override
+	public EntityResult educationInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.insert(this.educationDao, attrMap);
+	}
+
+	@Override
+	public EntityResult educationUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.update(this.educationDao, attrMap, keyMap);
+	}
+
+	@Override
+	public EntityResult educationDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.delete(this.educationDao, keyMap);
+	}
+
+	@Override
+	public EntityResult experienceLevelQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.query(experienceLevelDao, keyMap, attrList);
+	}
+
+	@Override
+	public EntityResult experienceLevelInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.insert(experienceLevelDao, attrMap);
+	}
+
+	@Override
+	public EntityResult experienceLevelUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.update(experienceLevelDao, attrMap, keyMap);
+	}
+
+	@Override
+	public EntityResult experienceLevelDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.delete(experienceLevelDao, keyMap);
+	}
+
+	@Override
+	public EntityResult originQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.query(originDao, keyMap, attrList);
+	}
+
+	@Override
+	public EntityResult originInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.insert(originDao, attrMap);
+	}
+
+	@Override
+	public EntityResult originUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.update(originDao, attrMap, keyMap);
+	}
+
+	@Override
+	public EntityResult originDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.delete(originDao, keyMap);
+	}
+
+	@Override
+	public EntityResult profileQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.query(profileDao, keyMap, attrList);
+	}
+
+	@Override
+	public EntityResult profileInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.insert(profileDao, attrMap);
+	}
+
+	@Override
+	public EntityResult profileUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.update(profileDao, attrMap, keyMap);
+	}
+
+	@Override
+	public EntityResult profileDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.delete(profileDao, keyMap);
+	}
+
+	@Override
+	public EntityResult statusQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.query(statusDao, keyMap, attrList);
+	}
+
+	@Override
+	public EntityResult statusInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.insert(statusDao, attrMap);
+	}
+
+	@Override
+	public EntityResult statusUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.update(statusDao, attrMap, keyMap);
+	}
+
+	@Override
+	public EntityResult statusDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.delete(statusDao, keyMap);
+	}
+	
+	@Override
+	public EntityResult CVQuery(Map<String, Object> keyMap, List<String> attrList)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.query(CVDao, keyMap, attrList);
+	}
+
+	@Override
+	public EntityResult CVInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.insert(CVDao, attrMap);
+	}
+
+	@Override
+	public EntityResult CVUpdate(Map<String, Object> attrMap, Map<String, Object> keyMap)
+			throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.update(CVDao, attrMap, keyMap);
+	}
+
+	@Override
+	public EntityResult CVDelete(Map<String, Object> keyMap) throws OntimizeJEERuntimeException {
+		// TODO Auto-generated method stub
+		return this.daoHelper.delete(CVDao, keyMap);
+	}
 	}
