@@ -10,7 +10,7 @@ import com.ontimize.api.core.service.ICVService;
 import com.ontimize.jee.server.rest.ORestController;
 
 @RestController
-@RequestMapping("/cvs")
+@RequestMapping("/:ID/CVs")
 @ComponentScan(basePackageClasses = { com.ontimize.api.core.service.ICVService.class })
 public class CVRestController extends ORestController<ICVService> {
 

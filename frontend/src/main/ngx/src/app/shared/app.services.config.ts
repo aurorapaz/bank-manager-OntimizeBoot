@@ -12,6 +12,6 @@ export const SERVICE_CONFIG: Object = {
     'path': '/users'
   },
   'cvs': {
-    'path': '/cvs'
+    'path': '/:ID/CVs'
   }
 };

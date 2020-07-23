@@ -1,6 +1,15 @@
-<o-form service="cvs" entity="cv" keys="ID" header-actions="no" show-header-navigation="no" header-actions="R;I;U;D">
+<o-form service="CVs" entity="cv" keys="ID" header-actions="no" show-header-navigation="no" header-actions="R;I;U;D">
     
       <o-integer-input attr="ID"  sql-type="INTEGER" enabled="no"></o-integer-input>
+      <o-integer-input attr="ID_CANDIDATE"  sql-type="INTEGER" enabled="no"></o-integer-input>
+      <o-text-input attr="STUDIES" fxFlex></o-text-input> 
+      <o-text-input attr="VOLUNTEERING" fxFlex></o-text-input> 
+      <o-text-input attr="WORK" fxFlex></o-text-input> 
+      <o-text-input attr="ENGLISH_LEVEL" fxFlex></o-text-input> 
+      <o-text-input attr="SKILLS" fxFlex></o-text-input> 
+      <o-text-input attr="PROGRAMATION_LANGUAGES" fxFlex></o-text-input> 
+      
+
       <!--<mat-tab label="{{ 'DOCUMENTS' | oTranslate }}">
         <o-form attr="customers_documents_form_edit" service="customers" entity="customer" fxLayout="column" show-header="no" keys="CUSTOMERID"
           keys-sql-types="VARBINARY" columns="ID_DMS_DOC">
