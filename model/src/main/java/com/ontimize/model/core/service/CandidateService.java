@@ -42,6 +42,12 @@ public class CandidateService implements ICandidateService{
  @Override
  public EntityResult candidateQuery(Map<String, Object> keyMap, List<String> attrList)
    throws OntimizeJEERuntimeException {
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
   return this.daoHelper.query(this.candidateDao, keyMap, attrList);
  }
 
@@ -56,6 +62,7 @@ public class CandidateService implements ICandidateService{
  @Override
  @Transactional(rollbackFor = Exception.class)
  public EntityResult candidateInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
+	 
   Map<String, Object> nonCandidateData = removeNonRelatedData(attrMap, CandidateDao.ATTR_EDUCATION,
     CandidateDao.ATTR_EXPERIENCE_LEVEL, CandidateDao.ATTR_ORIGIN, CandidateDao.ATTR_PROFILE,
     CandidateDao.ATTR_STATUS);

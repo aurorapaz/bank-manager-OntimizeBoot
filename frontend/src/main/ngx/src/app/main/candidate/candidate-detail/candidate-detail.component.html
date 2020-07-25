@@ -4,7 +4,7 @@
     <o-form service="candidates" entity="candidate" keys="ID" header-actions="R;I;U;D" show-header-navigation="no">
   
 
-  <o-text-input #ID attr="ID" sql-type="INTEGER" enabled="no"></o-text-input>
+  <o-integer-input #ids attr="ID" enabled="no"></o-integer-input>
   <o-row>
     <o-column>
       <o-row>
@@ -12,9 +12,10 @@
       <o-row>    
         
       </o-row>
-      <o-file-input attr="CV" label="{{ 'CURRICULUM' | oTranslate }}" read-only="no" required="yes" accept-file-type=".pdf"
+      <o-file-input attr="CV" label="{{ 'CURRICULUM PDF' | oTranslate }}" read-only="no" required="yes" accept-file-type=".pdf"
       max-file-size="40000000" multiple="no" layout-padding ></o-file-input>
-        
+      <o-row><o-button attr="CV" type="ICON" icon="insert_drive_file" routerLinkActive="active" routerLink="/curriculum/{{ ids }}" >Curriculum</o-button>
+      </o-row>
     </o-column>
     <o-column title-label="CANDIDATE_PERSONAL_INFORMATION" fxFlex>
       <o-row>
@@ -61,7 +62,6 @@
 
 
         
-  <o-text-input #ID_CV attr="ID_CV" sql-type="INTEGER" enabled="no"></o-text-input>
     </o-column>
   </o-row>
 

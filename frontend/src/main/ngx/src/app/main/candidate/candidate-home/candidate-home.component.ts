@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-
+import { Component, OnInit,ViewChild, AfterContentChecked } from '@angular/core';
+import { OTextInputComponent } from 'ontimize-web-ngx';
 @Component({
   selector: 'app-candidate-home',
   templateUrl: './candidate-home.component.html',
@@ -7,9 +7,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CandidateHomeComponent implements OnInit {
 
-  constructor() { }
-
-  ngOnInit() {
+  constructor() { 
+    
   }
 
+   ngOnInit() {
+  }
 }

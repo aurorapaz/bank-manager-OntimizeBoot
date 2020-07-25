@@ -22,7 +22,7 @@ import com.ontimize.jee.server.dao.DefaultOntimizeDaoHelper;
 
 
 @Lazy
-@Service("CVs")
+@Service("cv")
 public class CVService implements ICVService {
 
 	@Autowired
@@ -34,7 +34,19 @@ public class CVService implements ICVService {
 	@Override
 	public EntityResult cvQuery(Map<String, Object> keyMap, List<String> attrList) throws OntimizeJEERuntimeException {
 		// TODO Auto-generated method stub
-		return null;
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		System.out.println("////////////////////////////////////");
+		return this.daoHelper.query(this.CVDao, keyMap, attrList);
 	}
 	@Override
 	public EntityResult cvInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {

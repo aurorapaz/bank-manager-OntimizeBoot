@@ -14,7 +14,7 @@ const routes: Routes = [{
   component: CandidateNewComponent
 },
 {
-  path: ":ID/CVs",
+  path: "cv/:ID",
   component: CandidateDetailCVComponent
 },
 {

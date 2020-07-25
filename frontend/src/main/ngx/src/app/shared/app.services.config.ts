@@ -1,4 +1,8 @@
 export const SERVICE_CONFIG: Object = {
+  
+  'cv': {
+    'path': '/cv'
+  },
   'candidates': {
     'path': '/candidates'
   },
@@ -10,8 +14,5 @@ export const SERVICE_CONFIG: Object = {
   },
   'users': {
     'path': '/users'
-  },
-  'cvs': {
-    'path': '/:ID/CVs'
   }
 };
