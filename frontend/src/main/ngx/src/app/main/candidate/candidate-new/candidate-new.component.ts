@@ -13,3 +13,5 @@ export class CandidateNewComponent implements OnInit {
   }
 
 }
+
+

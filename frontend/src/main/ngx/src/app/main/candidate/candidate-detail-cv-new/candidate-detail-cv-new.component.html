@@ -1,0 +1,19 @@
+
+<mat-tab-group fxFlex> 
+
+  <mat-tab label="{{ 'CURRICULUM' | oTranslate }}">
+    <o-table fxFlex attr="CVsTable" service="cv" entity="cv" keys="ID" insert-button="yes"
+             refresh-button="yes" detail-mode="none" delete-button="no" query-rows="20" parent-keys="ID_CV:ID"
+             columns="ID;ID_CANDIDATE;STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES" 
+             visible-columns="ID_CANDIDATE;STUDIES;VOLUNTEERING;WORK;ENGLISH_LEVEL;SKILLS;PROGRAMATION_LANGUAGES"  >
+          <o-table-column attr="ID_CANDIDATE" title="ID_CANDIDATE" type="integer" ></o-table-column>
+          <o-table-column attr="STUDIES" title="STUDIES" type="text"></o-table-column>
+          <o-table-column attr="VOLUNTEERING" title="VOLUNTEERING" type="text"></o-table-column>
+          <o-table-column attr="WORK" title="WORK" type="text"></o-table-column>
+          <o-table-column attr="ENGLISH_LEVEL" title="ENGLISH_LEVEL" type="text"></o-table-column>
+          <o-table-column attr="SKILLS" title="SKILLS" type="text"></o-table-column>
+          <o-table-column attr="PROGRAMATION_LANGUAGES" title="PROGRAMATION_LANGUAGES" type="text"></o-table-column>
+        </o-table>
+
+  </mat-tab>
+</mat-tab-group>

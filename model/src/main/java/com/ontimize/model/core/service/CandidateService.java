@@ -62,7 +62,7 @@ public class CandidateService implements ICandidateService{
  @Override
  @Transactional(rollbackFor = Exception.class)
  public EntityResult candidateInsert(Map<String, Object> attrMap) throws OntimizeJEERuntimeException {
-	 
+	 //attrMap.put("ID_CV", CandidateDao.ATTR_ID);
   Map<String, Object> nonCandidateData = removeNonRelatedData(attrMap, CandidateDao.ATTR_EDUCATION,
     CandidateDao.ATTR_EXPERIENCE_LEVEL, CandidateDao.ATTR_ORIGIN, CandidateDao.ATTR_PROFILE,
     CandidateDao.ATTR_STATUS);
